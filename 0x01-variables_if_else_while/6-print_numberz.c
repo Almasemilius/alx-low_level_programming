@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ * Description: 'function to print integer number'
+ * Return: return integer 0
+ */
+
+int main(void)
+{
+	int i;
+
+	for (i = 0; i < 10; i++)
+	{
+		putchar(i);
+	}
+	putchar('\n');
+
+	return (0);
+}
