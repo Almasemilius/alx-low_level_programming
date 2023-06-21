@@ -4,6 +4,7 @@
 /**
  *_isalpha - Entry point
  *Description: 'Main function to print putchar'
+ *@c: Parameter input
  *Return: Integer Value 0
  */
 
