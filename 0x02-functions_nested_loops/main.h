@@ -11,6 +11,7 @@ void times_table(void);
 int _islower(int c);
 int add(int, int);
 void jack_bauer(void);
-int _abs(int)
-	;
+int _abs(int);
+void print_to_98(int n);
+
 #endif
