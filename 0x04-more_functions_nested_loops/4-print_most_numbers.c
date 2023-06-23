@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- *print_to_98 - Entry point
+ *print_most_numbers - Entry point
  *Description: 'Main function to print putchar'
  *Return: Integer Value 0
  */
