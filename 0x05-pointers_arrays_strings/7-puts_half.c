@@ -12,12 +12,14 @@ void puts_half(char *str)
 
 	int length = 0;
 
-	int start_index, i;
+	int i;
 
 	while (str[length] != '\0')
 	{
 		length++;
 	}
+
+	int start_index;
 
 	if (length % 2 == 0)
 	{
@@ -25,10 +27,10 @@ void puts_half(char *str)
 	}
 	else
 	{
-		start_index = (length) / 2;
+		start_index = (length - 1) / 2;
 	}
 
-	for (i = start_index; str[i] != '\0'; i++)
+	for (i = start_index; i < length; i++)
 	{
 		_putchar(str[i]);
 	}
