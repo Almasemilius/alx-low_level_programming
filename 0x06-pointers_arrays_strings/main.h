@@ -10,4 +10,5 @@ char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
 char *_strcat(char *dest, char *src);
+char *rot13(char *);
 #endif
