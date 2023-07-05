@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * _strlen_recursion - check the code
+ * factorial - check the code
  * Description: 'Recursion function'
- * @s: Pointer to variable str
+ * @n: Pointer to variable str
  * Return: Always null
  */
 int factorial(int n)
