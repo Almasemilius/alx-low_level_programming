@@ -1,49 +1,32 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * sqrt_helper - check the code
- * Description: 'Recursion function'
- * @n: Variable y
- * @start: Variable y
- * @end: Variable y
- * Return: Always null
+ * check_perfect_sqrt - verify number is its perfect square
+ * @n: number
+ * @i: average
+ * Return: return number if perfect square, else -1
  */
-int sqrt_helper(int n, int start, int end)
+int check_perfect_sqrt(int i, int n)
 {
-	int mid = (start + end) / 2;
-	int square = mid * mid;
-
-	if (start > end)
-	{
+	if (n <= 1)
 		return (-1);
-	}
-
-	if (square == n)
-	{
-		return (mid);
-	}
-	else if (square < n)
-	{
-		return (sqrt_helper(n, mid + 1, end));
-	}
+	else if (n % 1 == 0 && n / i == i)
+		return (i);
 	else
-	{
-		return (sqrt_helper(n, start, mid - 1));
-	}
+		return (check_perfect_sqrt(n, i + 1));
 }
 
 /**
- * _sqrt_recursion - check the code
- * Description: 'Recursion function'
- * @n: Variable y
- * Return: Always null
+ * _sqrt_recursion - function that returns the natural square root of a number
+ * @n: number to be checked
+ * Return: i if perfect square, else -1
  */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
-	{
 		return (-1);
-	}
-
-	return (sqrt_helper(n, 0, n));
+	else if (n < 2)
+		return (n);
+	else
+		return (check_perfect_sqrt(n, 2));
 }
