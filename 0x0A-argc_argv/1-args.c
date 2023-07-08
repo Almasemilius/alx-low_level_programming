@@ -1,14 +1,15 @@
 #include <stdio.h>
+
 /**
- * main - entry point
- * Description: 'Recursion function'
- * @argc: Pointer to variable str
- * @argv: Pointer to variable str
- * Return: Always null
+ * main - function that prints the number of arguments passed into it.
+ * @argc: number
+ * @argv: array of arguments in the program
+ * Return: Always 0
  */
+
 int main(int argc, char *argv[])
 {
-	(void)argc;
-	printf("%s\n", argv[0]);
+	(void)argv;
+	printf("%d\n", argc - 1);
 	return (0);
 }
