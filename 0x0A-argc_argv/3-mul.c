@@ -10,8 +10,9 @@
 
 int main(int argc, char *argv[])
 {
-	(void)argv;
 	int product;
+	
+	(void)argv;
 
 	if (argc != 3)
 	{
