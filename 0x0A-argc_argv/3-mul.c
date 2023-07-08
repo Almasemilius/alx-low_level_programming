@@ -11,7 +11,6 @@
 int main(int argc, char *argv[])
 {
 	int product;
-	
 	(void)argv;
 
 	if (argc != 3)
