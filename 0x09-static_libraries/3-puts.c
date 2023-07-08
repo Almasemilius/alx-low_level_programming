@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * _puts - check the code
- * Description: 'Change pointer value'
- * @str: Pointer to variable s
+ * _puts - function that prints a string, followed by a new line
+ * @str: pointer parameter
+ *
+ * On error, -1 is returned, and errno is set appropriately.
  */
 
 void _puts(char *str)

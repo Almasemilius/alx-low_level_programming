@@ -3,14 +3,13 @@
 
 /**
  *_isupper - Entry point
- *Description: 'Main function to print putchar'
- *@c: parameter passed
+ *Description: 'function that checks for uppercase character'
+ *@a: parameter passed
  *Return: Integer Value 0
  */
-int _isupper(int c)
+int _isupper(int a)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (a >= 'A' && a <= 'Z')
 		return (1);
 	return (0);
 }
-

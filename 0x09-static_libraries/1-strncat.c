@@ -1,29 +1,31 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * _strncat - check the code
- * Description: 'Change pointer value'
- * @dest: Pointer to variable str
- * @n: Pointer variable
- * @src: Pointer variable
- * Return: Character
+ * _strncat - concatenates n bytes from a string to another
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes of str to concatenate
+ *
+ * Return: a pointer to the resulting string dest
  */
-
 char *_strncat(char *dest, char *src, int n)
 {
-	char *destPtr = dest;
+	int i, j;
 
-	while (*destPtr != '\0')
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+		i++;
+
+	while (src[j] != '\0' && j < n)
 	{
-		destPtr++;
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	while (*src != '\0' && n > 0)
-	{
-		*destPtr = *src;
-		destPtr++;
-		src++;
-		n--;
-	}
-	*destPtr = '\0';
+
+	dest[i] = '\0';
+
 	return (dest);
 }

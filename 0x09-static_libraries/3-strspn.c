@@ -1,41 +1,32 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * _strspn - check the code
- * Description: 'Change pointer value'
- * @s: Pointer to variable str
- * @accept: Pointer variable
- * Return: Character
+ * _strspn - function to get the length of prefix substring
+ * @s: th string to be worked on
+ * @accept: the prefix
+ *
+ * Return: the number of prefix
  */
-
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int length = 0;
-	char *ptr_s = s;
+	unsigned int n = 0;
+	int i;
 
-	while (*ptr_s != '\0')
+	while (*s)
 	{
-		char *ptr_accept = accept;
-		int isMatch = 0;
-
-		while (*ptr_accept != '\0')
+		for (i = 0; accept[i]; i++)
 		{
-			if (*ptr_s == *ptr_accept)
+			if (*s == accept[i])
 			{
-				isMatch = 1;
+				n++;
 				break;
 			}
-			ptr_accept++;
+			else if (accept[i + 1] == '\0')
+			{
+				return (n);
+			}
 		}
-
-		if (isMatch == 0)
-		{
-			break;
-		}
-
-		length++;
-		ptr_s++;
+		s++;
 	}
-
-	return (length);
+	return (n);
 }

@@ -3,9 +3,9 @@
 
 /**
  *_isdigit - Entry Point
- *Description: 'Checks integer values'
+ *Description: 'function that checks for a digit(0 through 9) '
  *@c: argument parameter
- *Return: Either 0 or 1
+ *Return:  0 or 1
  */
 
 int _isdigit(int c)

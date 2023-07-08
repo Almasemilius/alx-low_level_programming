@@ -1,19 +1,23 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * _strcmp - check the code
- * Description: 'Change pointer value'
- * @s1: Pointer to variable str
- * @s2: Pointer variable
- * Return: Always Integer
+ * _strcmp - compare string values
+ * @s1: input value string
+ * @s2: input value string
+ *
+ * Return: s1[i] - s2[i]
  */
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 != '\0' && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
+	int i;
 
-	return (*s1 - *s2);
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+	i++;
+	}
+	return (0);
 }

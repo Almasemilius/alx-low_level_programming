@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * _strncpy - check the code
- * Description: 'Change pointer value'
+ * _strncpy - function that copies a string
+ * Description: 'function that copy string'
  * @dest: Pointer to variable str
  * @n: Pointer variable
  * @src: Pointer variable
@@ -11,16 +11,16 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int j;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	for (j = 0; j < n && src[j] != '\0'; j++)
 	{
-		dest[i] = src[i];
+		dest[j] = src[j];
 	}
 
-	for (; i < n; i++)
+	for (; j < n; j++)
 	{
-		dest[i] = '\0';
+		dest[j] = '\0';
 	}
 
 	return (dest);

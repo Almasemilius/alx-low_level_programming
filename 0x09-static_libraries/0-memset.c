@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 /**
- * _memset - check the code
- * Description: 'Change pointer value'
- * @s: Pointer to variable str
- * @b: Pointer variable
- * @n: Pointer variable
- * Return: Character
+ * _memset - prints buffer in hexa
+ * @s: character pointer
+ * @b: character
+ * @n : unsign integer
+ *
+ * Return: pointer s.
  */
-
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;

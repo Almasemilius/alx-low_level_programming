@@ -1,28 +1,25 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * _strpbrk - check the code
- * Description: 'Change pointer value'
- * @s: Pointer to variable str
- * @accept: Pointer variable
- * Return: Character
+ * _strpbrk - a function to search string
+ * @s: string to be seached
+ * @accept: set of seaches
+ *
+ * Return: null when not matched
  */
-
 char *_strpbrk(char *s, char *accept)
 {
-	while (*s != '\0')
-	{
-		char *ptr_accept = accept;
+	int i;
 
-		while (*ptr_accept != '\0')
+	while (*s)
+	{
+		for (i = 0; accept[i]; i++)
 		{
-			if (*s == *ptr_accept)
+			if (*s == accept[i])
 			{
 				return (s);
 			}
-			ptr_accept++;
 		}
 		s++;
 	}
-	return (NULL);
+	return ('\0');
 }

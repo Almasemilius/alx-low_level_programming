@@ -1,28 +1,28 @@
 #include <stdio.h>
 
 /**
- * _strstr - check the code
- * Description: 'Change pointer value'
- * @haystack: Pointer to variable str
- * @needle: Pointer variable
- * Return: Character
+ * _strstr - function that locates a substring.
+ * Description: 'unction that locates a substring.'
+ * @haystack: haystack param
+ * @needle: needle
+ * Return:  pointer to the beginning of the located substring, or NULL
  */
 
 char *_strstr(char *haystack, char *needle)
 {
 	while (*haystack != '\0')
 	{
-		char *ptr_haystack = haystack;
-		char *ptr_needle = needle;
+		char *haystack_pointer = haystack;
+		char *needle_pointer = needle;
 
-		while (*ptr_haystack == *ptr_needle && *ptr_haystack
-		!= '\0' && *ptr_needle != '\0')
+		while (*haystack_pointer == *needle_pointer && *haystack_pointer
+		!= '\0' && *needle_pointer != '\0')
 		{
-			ptr_haystack++;
-			ptr_needle++;
+			haystack_pointer++;
+			needle_pointer++;
 		}
 
-		if (*ptr_needle == '\0')
+		if (*needle_pointer == '\0')
 		{
 			return (haystack);
 		}

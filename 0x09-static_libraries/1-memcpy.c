@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * _memcpy - check the code
- * Description: 'Change pointer value'
- * @dest: Pointer to variable str
- * @src: Pointer variable
- * @n: Pointer variable
- * Return: Character
+ * _memcpy - function that copies memory area.
+ * @dest: destination
+ * @src: source
+ * @n: unsigned int
+ *
+ * Return: pointer to destination
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
