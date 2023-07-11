@@ -44,7 +44,7 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	fPointer = (char)malloc(sizeof(char *) * (words + 1));
+	fPointer = (char **)malloc(sizeof(char *) * (words + 1));
 	if (fPointer == NULL)
 		return (NULL);
 
