@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-/*
+/**
  * count_mywords - function that splits a string into words
  * @s: string supplied
  *
@@ -27,7 +27,7 @@ int count_mywords(char *s)
 
 	return (w);
 }
-/*
+/**
  * strtow - splits a string into words
  * @str: string to split
  *
