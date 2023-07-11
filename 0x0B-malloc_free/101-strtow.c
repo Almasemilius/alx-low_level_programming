@@ -1,72 +1,76 @@
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
 
-static int count_words(char *str) {
-    int count = 0;
-    int len, i;
+/*
+ * count_mywords - function that splits a string into words
+ * @s: string supplied
+ *
+ * Return: NULL if str == NULL or str == ""
+ */
+int count_mywords(char *s)
+{
+	int counter, c, w;
 
-    len = strlen(str);
-    i = 0;
-    
-    while (i < len) {
-        while (i < len && str[i] == ' ')
-            i++;
-        if (i < len && str[i] != ' ') {
-            count++;
-            while (i < len && str[i] != ' ')
-                i++;
-        }
-    }
-    
-    return count;
+	counter = 0;
+	w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
+	{
+		if (s[c] == ' ')
+			counter = 0;
+		else if (counter == 0)
+		{
+			counter = 1;
+			w++;
+		}
+	}
+
+	return (w);
 }
+/*
+ * strtow - splits a string into words
+ * @str: string to split
+ *
+ * Return: pointer to string
+ */
+char **strtow(char *str)
+{
+	char **fPointer, *sPointer;
+	int i, k = 0, len = 0, words, c = 0, start, end;
 
-static char *get_next_word(char **str_ptr) {
-    char *word_start;
-     word_start = *str_ptr;
-    
-    while (**str_ptr && **str_ptr == ' ')
-        (*str_ptr)++;
-    
-    while (**str_ptr && **str_ptr != ' ')
-        (*str_ptr)++;
-    
-    return word_start;
-}
+	while (*(str + len))
+		len++;
+	words = count_mywords(str);
+	if (words == 0)
+		return (NULL);
 
-char **strtow(char *str) {
-        int word_count, word_index;
-        char **words, *ptr, *word;
-        size_t word_length;
+	fPointer = (char)malloc(sizeof(char *) * (words + 1));
+	if (fPointer == NULL)
+		return (NULL);
 
-    if (str == NULL || *str == '\0')
-        return NULL;
+	for (i = 0; i <= len; i++)
+	{
+		if (str[i] == ' ' || str[i] == '\0')
+		{
+			if (c)
+			{
+				end = i;
+				sPointer = (char *)malloc(sizeof(char) * (c + 1));
+				if (sPointer == NULL)
+					return (NULL);
+				while (start < end)
+					*sPointer++ = str[start++];
+				*sPointer = '\0';
+				fPointer[k] = sPointer - c;
+				k++;
+				c = 0;
+			}
+		}
+		else if (c++ == 0)
+			start = i;
+	}
 
-    word_count = count_words(str);
-    if (word_count == 0)
-        return NULL;
+	fPointer[k] = NULL;
 
-    words = (char **)malloc((word_count + 1) * sizeof(char *));
-    if (words == NULL)
-        return NULL;
-
-    ptr = str;
-    word_index = 0;
-    while (*ptr) {
-        word = get_next_word(&ptr);
-    word_length = ptr - word;
-        words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
-        if (words[word_index] == NULL) {
-            while (word_index > 0)
-                free(words[--word_index]);
-            free(words);
-            return NULL;
-        }
-        strncpy(words[word_index], word, word_length);
-        words[word_index][word_length] = '\0';
-        word_index++;
-    }
-
-    words[word_index] = NULL;
-    return words;
+	return (fPointer);
 }
