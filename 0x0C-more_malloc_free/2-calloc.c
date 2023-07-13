@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - converts a string to an integer
+ * _calloc - converts a string to an integer
  * @nmemb: integer to be converted
  * @size: integer to be converted
  * Return: Pointer
