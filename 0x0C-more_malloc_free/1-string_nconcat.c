@@ -1,36 +1,46 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *string_nconcat(char *s1, char *s2, unsigned int n) {
-    if (s1 == NULL)
-        s1 = "";
-    if (s2 == NULL)
-        s2 = "";
+/**
+ * string_nconcat - converts a string to an integer
+ * @s1: integer to be converted
+ * @s2: integer to be converted
+ * @n: integer to be converted
+ * Return: Pointer
+ */
+char *string_nconcat(char *s1, char *s2, int n)
+{
+	int s1_len, s2_len, result_len, i, j;
+	char *result;
 
-    unsigned int s1_len = 0;
-    while (s1[s1_len] != '\0')
-        s1_len++;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-    unsigned int s2_len = 0;
-    while (s2[s2_len] != '\0')
-        s2_len++;
+	s1_len = 0;
+	while (s1[s1_len] != '\0')
+		s1_len++;
 
-    if (n >= s2_len)
-        n = s2_len;
+	s2_len = 0;
+	while (s2[s2_len] != '\0')
+		s2_len++;
 
-    char *result = malloc(s1_len + n + 1);
-    if (result == NULL)
-        exit(1);
+	if (n >= s2_len)
+		n = s2_len;
 
-    unsigned int i;
-    for (i = 0; i < s1_len; i++)
-        result[i] = s1[i];
+	result_len = s1_len + n;
+	result = malloc(result_len + 1);
+	if (result == NULL)
+		return (NULL);
 
-    unsigned int j;
-    for (j = 0; j < n; j++)
-        result[i++] = s2[j];
+	for (i = 0; i < s1_len; i++)
+		result[i] = s1[i];
 
-    result[i] = '\0'; 
+	for (j = 0; j < n; j++)
+		result[i++] = s2[j];
 
-    return result;
+	result[i] = '\0';
+
+	return (result);
 }
