@@ -1,4 +1,12 @@
 #include <stdio.h>
+
+/**
+ * int_index - converts a string to an integer
+ * @array: integer to be converted
+ * @size: integer to be converted
+ * @cmp: integer to be converted
+ * Return: Pointer
+ */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
