@@ -1,20 +1,22 @@
 #include "main.h"
 
 /**
- * clear_bit - clear bit
- *@n: value to clear
- *@index: bit location
- * Return: 1 on success, -1 on failure.
+ * clear_bit - set a value of a bit to 0
+ *@n: number to set
+ *@index: location of bit
+ * Return: bit value, or -1 on failure.
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > 63)
-	{
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
-	}
 
-	*n = *n - (1ul << index);
+	unsigned long int mask = 1UL << index;
+
+	mask = ~mask;
+
+	*n = *n & mask;
 
 	return (1);
 }
