@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * get_bit - cet value
- *@n: number to get
+ * get_bit - Return Value of a bit
+ *@n: number
  *@index: location of bit
  * Return: bit value, or -1 on failure.
  */
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int x;
+	unsigned long int a;
 
 	if (index > 63)
 	{
 		return (-1);
 	}
 
-	x = 1 << index;
-	return ((n & x) > 0);
+	a = 1 << index;
+	return ((n & a) > 0);
 }

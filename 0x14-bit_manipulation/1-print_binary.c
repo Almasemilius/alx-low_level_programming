@@ -1,37 +1,37 @@
 #include "main.h"
 
 /**
- * print_binary - print binary
+ * print_binary - print binary of a number
  *@n: binary to print
  * Return: void.
  */
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int x = 1ul << 63;
-	char c = x;
+	unsigned long int a = 1ul << 63;
+	char b = a;
 
-	while (!(x & n) && x != 0)
+	while (!(a & n) && a != 0)
 	{
-		x = x >> 1;
+		a = a >> 1;
 	}
 
-	if (x == 0)
+	if (a == 0)
 	{
 		_putchar('0');
 	}
 
-	while (x)
+	while (a)
 	{
-		if (x & n)
+		if (a & n)
 		{
-			c = '1';
+			b = '1';
 		}
 		else
 		{
-			c = '0';
+			b = '0';
 		}
-		_putchar(c);
-		x = x >> 1;
+		_putchar(b);
+		a = a >> 1;
 	}
 }

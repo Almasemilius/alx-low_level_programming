@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * clear_bit - clear bit
+ * clear_bit - Sets bit to 0
  *@n: value to clear
  *@index: bit location
  * Return: 1 on success, -1 on failure.
