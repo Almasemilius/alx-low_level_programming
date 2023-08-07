@@ -10,36 +10,30 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	mode_t filePermissions;
-	ssize_t textLength;
-	ssize_t bytesWritten;
+	int a, b, length;
 
+	length = 0;
 	if (filename == NULL)
 	{
 		return (-1);
 	}
+	if (text_content != NULL)
+	{
+		for (length = 0; text_content[length];)
+		{
+			length++;
+		}
+	}
 
-	filePermissions = S_IRUSR | S_IWUSR;
+	a = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	b = write(a, text_content, length);
 
-	int fileDescriptor = open(filename, O_WRONLY |
-	O_CREAT | O_TRUNC, filePermissions);
-	if (fileDescriptor == -1)
+	if (a == -1 || b == -1)
 	{
 		return (-1);
 	}
 
-	if (text_content != NULL)
-	{
-		textLength = strlen(text_content);
-		bytesWritten = write(fileDescriptor, text_content, textLength);
+	close(a);
 
-		if (bytesWritten != textLength)
-		{
-			close(fileDescriptor);
-			return (-1);
-		}
-	}
-
-	close(fileDescriptor);
 	return (1);
 }
