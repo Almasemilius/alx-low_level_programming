@@ -20,9 +20,9 @@ void checkArgumentsNumber(int args)
 /**
  * fileFromDoesntExist - checks that file_from exists and can be read
  * @check: checks if true of false
- * @file: file_from name
- * @fd_from: file descriptor of file_from, or -1
- * @fd_to: file descriptor of file_to, or -1
+ * @source: file_from name
+ * @from: file descriptor of file_from, or -1
+ * @to: file descriptor of file_to, or -1
  *
  * Return: void
  */
@@ -42,9 +42,9 @@ void fileFromDoesntExist(ssize_t check, char *source, int from, int to)
 /**
  * createFail - checks that file_to was created and/or can be written to
  * @check: checks if true of false
- * @file: file_to name
- * @fd_from: file descriptor of file_from, or -1
- * @fd_to: file descriptor of file_to, or -1
+ * @destination: file_to name
+ * @d_from: file descriptor of file_from, or -1
+ * @d_to: file descriptor of file_to, or -1
  *
  * Return: void
  */
@@ -78,7 +78,7 @@ void check100(int check, int fd)
 }
 /**
  * main - opies the content of a file to another file.
- * @argc: number of arguments passed
+ * @args: number of arguments passed
  * @argv: array of pointers to the arguments
  *
  * Return: 0 on success
