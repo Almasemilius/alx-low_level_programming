@@ -1,20 +1,23 @@
 #include "main.h"
 
 /**
- * clear_bit - Sets bit to 0
- *@n: value to clear
- *@index: bit location
- * Return: 1 on success, -1 on failure.
+ * clear_bit - Resets the bit.
+ * @ptr_add: pointer of an unsigned long int.
+ * @index: index
+ *
+ * Return: 1 if success, -1 if dailed.
  */
-
-int clear_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *ptr_add, unsigned int index)
 {
-	if (index > 63)
-	{
-		return (-1);
-	}
+	int a;
 
-	*n = *n - (1ul << index);
+	if (index > 63)
+		return (-1);
+
+	a = 1 << index;
+
+	if (*ptr_add & a)
+		*ptr_add ^= a;
 
 	return (1);
 }
