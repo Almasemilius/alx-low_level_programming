@@ -9,27 +9,27 @@
  *
  * Return: 1 on success, -1 on failure
 */
-int append_text_to_fle(const char *fname, char *context)
+int append_text_to_fle(const char* fname, char* context)
 {
-	int fle, status, wrd = 0;
+    int fle, status, wrd = 0;
 
-	if (fname == NULL) 
-		return (-1);
+    if (fname == NULL)
+        return (-1);
 
-	fle = open(fname, O_APPEND | O_WRONLY);
-	if (fle == -1) 
-		return (-1);
+    fle = open(fname, O_APPEND | O_WRONLY);
+    if (fle == -1)
+        return (-1);
 
-	if (context) 
-	{
-		while (context[wrd] != '\0') 
-			wrd++;
+    if (context)
+    {
+        while (context[wrd] != '\0')
+            wrd++;
 
-		status = write(fle, context, wrd);
-		if (status == -1) 
-			return (-1);
-	}
+        status = write(fle, context, wrd);
+        if (status == -1)
+            return (-1);
+    }
 
-	close(fle); 
-	return (1);
+    close(fle);
+    return (1);
 }
